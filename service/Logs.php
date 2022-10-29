@@ -12,7 +12,7 @@ class Logs extends Base {
     FileEo::WriterEnd($file, json_encode($content)."\n");
   }
 
-  /* 缓存数据库 */
+  /* 生产者 */
   static function Logs(array $data) {
     $redis = new Redis();
     $redis->RPush('logs', json_encode($data));

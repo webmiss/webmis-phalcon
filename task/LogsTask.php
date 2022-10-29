@@ -28,6 +28,7 @@ class LogsTask extends Base {
     // 数据
     $data = json_decode($msg, true);
     self::Print($data);
+    return true;
   }
 
 }
