@@ -9,9 +9,14 @@ class Base extends Task {
   /* 输出到控制台 */
   static function Print(...$content): void {
     foreach($content as $val){
-      print_r($val); echo ' ';
+      echo json_encode($val, JSON_UNESCAPED_UNICODE).' ';
     }
     echo "\n";
+  }
+
+  /* 异常错误 */
+  static function Error($msg) {
+    throw new \InvalidArgumentException($msg);
   }
 
 }

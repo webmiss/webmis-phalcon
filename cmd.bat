@@ -16,9 +16,6 @@ REM 安装
 REM Socket-运行
 ) else if "%s%"=="socket" (
   ( php %cli% socket start ) || ( echo ^> 请安装'php' )
-REM Logs-运行
-) else if "%s%"=="logs" (
-  ( php %cli% redis logs ) || ( echo ^> 请安装'php' )
 ) else (
   echo ----------------------------------------------------
   echo [use] cmd.bat ^<command^>
@@ -28,7 +25,5 @@ REM Logs-运行
   echo   install       依赖包: composer install
   echo ^<WebSocket^>
   echo   socket        运行
-  echo ^<Logs^>
-  echo   logs          运行
   echo ----------------------------------------------------
 )
