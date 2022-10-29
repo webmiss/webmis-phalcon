@@ -1,7 +1,6 @@
 <?php
 declare(strict_types=1);
 
-use Phalcon\Loader;
 use Phalcon\Di\FactoryDefault\Cli as CliDI;
 use Phalcon\Cli\Dispatcher;
 use Phalcon\Cli\Console;
@@ -13,18 +12,6 @@ define('BASE_PATH', __DIR__);
 $load = BASE_PATH.'/vendor/autoload.php';
 if(!is_file($load)) die('安装依赖包: composer install');
 require $load;
-
-/* 命名空间 */
-$loader = new Loader();
-$loader->registerNamespaces([
-  'Task'=> 'task/',
-  'Config'=> BASE_PATH.'/config/',
-  'Library'=> BASE_PATH.'/library/',
-  'Model'=> BASE_PATH.'/model/',
-  'Service'=> BASE_PATH.'/service/',
-  'Util'=> BASE_PATH.'/util/',
-]);
-$loader->register();
 
 /* Cli */
 $container  = new CliDI();
