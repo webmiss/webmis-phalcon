@@ -1,5 +1,5 @@
 # webmis-phalcon
-采用 PHP8 + Phalcon 开发API基础框架
+采用 PHP8 + Phalcon5 开发API基础框架
 
 ## 安装
 ```bash
