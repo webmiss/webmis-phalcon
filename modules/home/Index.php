@@ -5,8 +5,6 @@ use Service\Base;
 use Library\Qrcode;
 use Library\FileEo;
 use Library\Captcha;
-use Library\Upload;
-use Util\Util;
 
 class Index extends Base {
 
@@ -43,18 +41,6 @@ class Index extends Base {
     self::getJSON();
     header('content-type: image/png');
     return FileEo::Bytes($file);
-  }
-
-  /* OSS-上传回调 */
-  static function OssCallback() {
-    // 参数
-    $param = self::Json();
-    // 验证
-    if(!Upload::OssPolicyVerify($param)) return '';
-    // 数据处理
-    $text = json_encode($param);
-    Util::Exec('echo '.$text.' > upload/callback.txt');
-    return self::GetJSON(['Status'=>'Ok']);
   }
 
 }
